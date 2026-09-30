@@ -135,7 +135,7 @@ export default function App() {
     setError({
       phase: 'Error de Red / Conexión',
       message: 'No se pudo comunicar con el servidor backend FastAPI. Asegúrate de que está ejecutándose en el puerto 8000.',
-      actions: ['Inicia el backend usando: python -m uvicorn background.main:app --reload --port 8000'],
+      actions: ['Inicia el backend usando: python -m uvicorn backend.main:app --reload --port 8000'],
       technical: err.toString() + '\n' + err.stack
     });
     setStep('form');

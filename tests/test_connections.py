@@ -15,7 +15,7 @@ import argparse
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "background" / "src"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "backend" / "src"))
 
 from utils.config import load_config
 from clients.idonia_client import generate_jwt
@@ -82,7 +82,7 @@ def main():
 
     logger.info("")
     logger.info("[4] PDF del informe")
-    pdf_path = Path(__file__).parent.parent / "background" / "Informes" / "Informe RM RODILLA.pdf"
+    pdf_path = Path(__file__).parent.parent / "backend" / "Informes" / "Informe RM RODILLA.pdf"
     results.append(check(
         "Informe_RM_RODILLA.pdf encontrado en Informes/",
         lambda: str(pdf_path) if pdf_path.exists() else (_ for _ in ()).throw(
@@ -92,7 +92,7 @@ def main():
 
     logger.info("")
     logger.info("[5] Imagen del estudio")
-    img_path = Path(__file__).parent.parent / "background" / "Informes" / "RM Rodilla.png"
+    img_path = Path(__file__).parent.parent / "backend" / "Informes" / "RM Rodilla.png"
     results.append(check(
         "RM_Rodilla.png encontrado en Informes/",
         lambda: str(img_path) if img_path.exists() else (_ for _ in ()).throw(

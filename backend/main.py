@@ -161,7 +161,7 @@ async def process_report(
                         "phase": "Inicialización",
                         "type": "ConfigError",
                         "message": f"Error de configuración: {e}. ¿Has configurado el archivo .env?",
-                        "actions": ["Copia .env.example a .env en el directorio background/ y rellena tus credenciales reales."]
+                        "actions": ["Copia .env.example a .env en el directorio backend/ y rellena tus credenciales reales."]
                     },
                     "logs": [f"Error de configuración: {e}"]
                 }

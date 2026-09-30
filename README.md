@@ -120,7 +120,7 @@ Esta opción crea un entorno virtual llamado `iabiomed` para evitar conflictos c
 3. **Instalar las dependencias del backend**:
    Desde el directorio raíz del proyecto, ejecuta:
    ```bash
-   pip install -r background/requirements.txt
+   pip install -r backend/requirements.txt
    ```
    *¿Qué hace esto?* Instala todas las librerías necesarias para el backend de Python (`FastAPI`, `uvicorn`, `docling`, `requests`, `openai`, etc.) dentro del entorno aislado.
 
@@ -139,7 +139,7 @@ Si no tienes Conda, puedes usar el gestor de entornos nativo de Python:
    - En Linux / macOS / WSL: `source .venv/bin/activate`
 3. **Instalar dependencias de Python**:
    ```bash
-   pip install -r background/requirements.txt
+   pip install -r backend/requirements.txt
    ```
 
 ---
@@ -151,7 +151,7 @@ Si usas WSL, puedes automatizar todo el Paso 1 y parte del Paso 2 ejecutando el 
 chmod +x setup_env.sh
 ./setup_env.sh
 ```
-*¿Qué hace esto?* Detecta automáticamente Conda en tu sistema WSL, crea el entorno `iabiomed`, instala las dependencias mediante `pip install -r background/requirements.txt` y copia la plantilla `.env.example` a `.env`.
+*¿Qué hace esto?* Detecta automáticamente Conda en tu sistema WSL, crea el entorno `iabiomed`, instala las dependencias mediante `pip install -r backend/requirements.txt` y copia la plantilla `.env.example` a `.env`.
 
 ---
 
@@ -162,10 +162,10 @@ El backend necesita conectarse a las APIs de Idonia, Recog y OpenAI/LLM. Para co
 1. **Copiar la plantilla del archivo de configuración**:
    Desde la raíz del proyecto, ejecuta:
    ```bash
-   cp background/.env.example background/.env
+   cp backend/.env.example backend/.env
    ```
 2. **Editar las claves reales**:
-   Abre el archivo `background/.env` recién creado con tu editor de texto favorito (ej. VSCode, nano) y rellena los campos necesarios:
+   Abre el archivo `backend/.env` recién creado con tu editor de texto favorito (ej. VSCode, nano) y rellena los campos necesarios:
    - `IDONIA_API_KEY` y `IDONIA_API_SECRET`
    - `RECOG_API_KEY`
    - `OPENAI_API_KEY` (y `OPENAI_BASE_URL` si utilizas un servidor local/vLLM)
@@ -338,7 +338,7 @@ El servidor backend de FastAPI está configurado para servir automáticamente lo
 2. **Iniciar el servidor FastAPI desde el directorio raíz**:
    ```bash
    # Asegúrate de estar en el directorio raíz del proyecto
-   python -m uvicorn background.main:app --host 0.0.0.0 --port 8000
+   python -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
    ```
 3. **Acceder a la aplicación**: Abre tu navegador e ingresa a `http://localhost:8000`.
 
@@ -351,7 +351,7 @@ Si estás realizando modificaciones en el frontend de React y deseas actualizaci
    ```bash
    conda activate iabiomed
    # Desde el directorio raíz
-   python -m uvicorn background.main:app --reload --port 8000
+   python -m uvicorn backend.main:app --reload --port 8000
    ```
 2. **Arrancar el Frontend (Vite)**:
    En otra pestaña del terminal:

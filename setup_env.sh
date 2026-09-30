@@ -47,22 +47,22 @@ eval "$(conda shell.bash hook)"
 echo "🔄 Activando entorno Conda '$ENV_NAME'..."
 conda activate "$ENV_NAME"
 
-echo "📥 Instalando dependencias de Python desde background/requirements.txt..."
+echo "📥 Instalando dependencias de Python desde backend/requirements.txt..."
 # Usamos pip dentro de conda para instalar los paquetes requeridos
-pip install -r background/requirements.txt
+pip install -r backend/requirements.txt
 
 # Configurar el archivo .env si no existe
-if [ ! -f "background/.env" ]; then
-    echo "📝 Archivo background/.env no encontrado. Creando copia desde .env.example..."
-    cp background/.env.example background/.env
-    echo "⚠️  Recuerda editar background/.env con tus claves reales de Idonia, Recog y OpenAI/LLM."
+if [ ! -f "backend/.env" ]; then
+    echo "📝 Archivo backend/.env no encontrado. Creando copia desde .env.example..."
+    cp backend/.env.example backend/.env
+    echo "⚠️  Recuerda editar backend/.env con tus claves reales de Idonia, Recog y OpenAI/LLM."
 else
-    echo "✅ Archivo background/.env ya existe."
+    echo "✅ Archivo backend/.env ya existe."
 fi
 
 echo "=========================================================="
 echo "🎉 ¡Configuración completada con éxito!"
 echo "Para activar el entorno ejecuta: conda activate $ENV_NAME"
-echo "Para iniciar el backend ejecuta: python -m uvicorn background.main:app --reload --port 8000"
+echo "Para iniciar el backend ejecuta: python -m uvicorn backend.main:app --reload --port 8000"
 echo "Para iniciar el frontend ejecuta: cd frontend && npm run dev"
 echo "=========================================================="

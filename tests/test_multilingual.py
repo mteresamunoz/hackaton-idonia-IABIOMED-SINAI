@@ -15,7 +15,7 @@ import argparse
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "background" / "src"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "backend" / "src"))
 
 from utils.config import load_config
 from utils.latex_compiler import compile_latex, _find_latex_compiler
