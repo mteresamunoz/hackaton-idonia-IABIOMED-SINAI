@@ -1,0 +1,67 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[margin=2cm, top=0cm]{geometry} % Margen superior 0 para la barra azul
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{helvet} % Fuente sans-serif limpia similar a la de la imagen
+\renewcommand{\familydefault}{\sfdefault}
+
+% Definición de colores
+\definecolor{azulRecog}{HTML}{4A40EE} % Azul de la barra superior
+\definecolor{grisTexto}{HTML}{333333} % Texto principal ligeramente suave
+\definecolor{grisClaro}{HTML}{F2F2F2} % Para el fondo de la esquina superior derecha
+
+\color{grisTexto}
+
+% Configuración de títulos de secciones
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{black}}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+% --- BARRA SUPERIOR DECORATIVA (TIKZ) ---
+\begin{tikzpicture}[remember picture, overlay]
+    % Bloque azul izquierdo
+    \fill[azulRecog] (current page.north west) 
+        -- ++(7.5cm,0) 
+        -- ++(-0.8cm,-1.3cm) 
+        -- ++(-6.7cm,0) -- cycle;
+    % Bloque gris claro derecho
+    \fill[grisClaro] (current page.north east) 
+        -- ++(-2.5cm,0) 
+        -- ++(-0.5cm,-1.3cm) 
+        -- ++(3cm,0) -- cycle;
+\end{tikzpicture}
+
+\vspace*{2.5cm} % Espacio para no solapar el texto con la barra superior
+
+% --- CABECERA DEL INFORME ---
+{\Huge \textbf{Informe Resultados}} \\[0.2cm]
+{\large \color{grisTexto!80!black} Hospital Recog}
+
+\vspace{0.5cm}
+
+% --- CONTENIDO ---
+
+\section*{¿Qué prueba te han hecho?}
+Te han hecho una resonancia magnética de la rodilla derecha. Esta prueba ayuda a los médicos a ver imágenes detalladas de los tejidos dentro de tu rodilla y les permite evaluar cualquier problema en esa área.
+
+\section*{¿Qué te pasa?}
+Tienes dolor en la rodilla derecha.
+
+\section*{¿Qué han visto?}
+En la resonancia, se ha visto que tus meniscos y los ligamentos de la rodilla están en buen estado, sin rupturas ni cambios importantes. Tus tendones también están dentro de lo normal.
+
+Sin embargo, se ha detectado que tu rótula (el hueso pequeño en la parte frontal de la rodilla) está un poco alta. Además, en la parte externa de la rótula, hay algunos desgastes de nivel medio. No hay acumulación de líquido en la articulación, lo cual es positivo ya que puede indicar que no hay inflamación excesiva.
+
+\section*{¿Qué recomiendan a partir de estos resultados?}
+Los especialistas han identificado el desgaste en la rótula, lo cual podría estar relacionado con tu dolor. Quizás valoren tratar este desgaste o ajustar la posición de la rótula para mejorar tu situación.
+
+\end{document}

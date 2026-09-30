@@ -1,0 +1,15 @@
+# --- Core ---
+requests>=2.31.0
+openai>=1.30.0
+
+# --- Extracción de texto de PDFs e imágenes (OCR) ---
+docling>=2.0.0
+pdfplumber>=0.11.0
+
+# --- Tests ---
+pytest>=8.0.0
+
+# --- Nota: compilación LaTeX ---
+# Para generar los PDFs traducidos (multilingüe) se requiere pdflatex/xelatex.
+# No se instala vía pip. En Windows instala MiKTeX: https://miktex.org/download
+# En Linux: sudo apt-get install texlive-latex-base texlive-latex-extra
